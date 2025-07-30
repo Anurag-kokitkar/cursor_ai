@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2196f3" />
+    <meta name="description" content="AI-Powered Code Review Assistant - Analyze code quality, detect bugs, and get intelligent suggestions for better code." />
+    <meta name="keywords" content="code review, static analysis, AST parsing, GitHub integration, code quality, bug detection, security analysis" />
+    <meta name="author" content="AI Code Review Team" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI Code Review Assistant" />
+    <meta property="og:description" content="Intelligent code analysis with multi-language support and GitHub integration" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ai-code-review.com" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Code Review Assistant" />
+    <meta name="twitter:description" content="Intelligent code analysis with multi-language support and GitHub integration" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/twitter-card.png" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon for different devices -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+    
+    <title>AI Code Review Assistant - Intelligent Code Analysis</title>
+    
+    <style>
+      /* Loading screen styles */
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-family: 'Inter', sans-serif;
+        color: white;
+      }
+      
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loader-text {
+        font-size: 18px;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+      
+      /* Hide loader when React loads */
+      .loaded #initial-loader {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>You need to enable JavaScript to run this application.</p>
+        <p>AI Code Review Assistant requires JavaScript to provide the best user experience.</p>
+      </div>
+    </noscript>
+    
+    <!-- Initial loading screen -->
+    <div id="initial-loader">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Loading AI Code Review Assistant...</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide loader when page is fully loaded
+      window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+      });
+      
+      // Remove loader after 5 seconds as fallback
+      setTimeout(function() {
+        document.body.classList.add('loaded');
+      }, 5000);
+    </script>
+  </body>
+</html>
